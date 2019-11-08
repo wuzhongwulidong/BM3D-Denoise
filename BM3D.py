@@ -95,6 +95,7 @@ def Step1_fast_match(_noisyImg, _BlockPoint):
     blk_positions = numpy.zeros((max_matched, 2), dtype=int)  # 用于记录相似blk的位置
     Final_similar_blocks = numpy.zeros((max_matched, Blk_Size, Blk_Size), dtype=float)
 
+    # 一个参考块
     img = _noisyImg[present_x: present_x+Blk_Size, present_y: present_y+Blk_Size]
     dct_img = cv2.dct(img.astype(numpy.float64))  # 对目标作block作二维余弦变换
 
